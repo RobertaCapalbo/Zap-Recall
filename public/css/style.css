@@ -135,7 +135,7 @@ box-sizing: border-box;
     display:flex;
     gap:8px;
     margin-top:40px;
-    margin-left:13px;
+    margin-left:14px;
 }
 
 .no{
@@ -152,6 +152,7 @@ display: flex;
 align-items: center;
 text-align: center;
 color: #FFFFFF;
+border:none
 }
 
 .almost{
@@ -168,6 +169,7 @@ display: flex;
 align-items: center;
 text-align: center;
 color: #FFFFFF;
+border:none
 }
 
 
@@ -183,4 +185,5 @@ font-size: 12px;
 line-height: 14px;
 text-align: center;
 color: #FFFFFF;
+border:none
 }
