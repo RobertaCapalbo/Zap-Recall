@@ -100,7 +100,7 @@ color: #333333;
     display:none
 }
 
-.back-face{
+.back-face, .answers{
 background: #FFFFD5;
 box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
 border-radius: 5px;
@@ -111,12 +111,14 @@ position:relative;
 }
 
 .seta-virar{
-    position:absolute;
-    bottom:10px;
-    left:260px;
+position:absolute;
+bottom:10px;
+left:255px;
+width: 30px;
+height: 20px;
 }
 
-.pergunta-question{
+.pergunta-question, .resposta-question{
 height: 44px;
 font-family: 'Recursive';
 font-style: normal;

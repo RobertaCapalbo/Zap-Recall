@@ -27,9 +27,23 @@ export default function App() {
                 <img className="seta-play" src={seta_play} alt='seta-play'/>
             </div>
         </div>
-        <div className="back-face">
+        <div className="back-face none">
             <p className='pergunta-question'>Quando é o aniversário de Harry Potter?</p>
-            <img className="seta-virar" src={seta_play} alt='seta-virar'/>
+            <img className="seta-virar" src={seta_virar} alt='seta-virar'/>
+        </div>
+        <div className="answers">
+            <p className='resposta-question'>31 de julho</p>
+            <div className="buttons">
+            <button className="no">
+                Não lembrei
+            </button>
+            <button className="almost">
+                Quase não lembrei
+            </button>
+            <button className="yes">
+                Zap!
+            </button>
+          </div>
         </div>
     </div>
 
@@ -41,9 +55,23 @@ export default function App() {
                 <img className="seta-play" src={seta_play} alt='seta-play'/>
             </div>
         </div>
-        <div className="back-face">
+        <div className="back-face none">
             <p className='pergunta-question'>Qual era o animago de Lupin?</p>
-            <img className="seta-virar" src={seta_play} alt='seta-virar'/>
+            <img className="seta-virar" src={seta_virar} alt='seta-virar'/>
+        </div>
+        <div className="answers">
+            <p className='resposta-question'>Pegadinha! Lupin não era um animago, mas um lobisomem</p>
+            <div className="buttons">
+            <button className="no">
+                Não lembrei
+            </button>
+            <button className="almost">
+                Quase não lembrei
+            </button>
+            <button className="yes">
+                Zap!
+            </button>
+          </div>
         </div>
     </div>
 
@@ -54,11 +82,24 @@ export default function App() {
                 <img className="seta-play" src={seta_play} alt='seta-play'/>
             </div>  
         </div>
-        <div className="back-face">
+        <div className="back-face none">
             <p className='pergunta-question'>Qual foi a segunda horcrux a ser destruída?</p>
-            <img className="seta-virar" src={seta_play} alt='seta-virar'/>
+            <img className="seta-virar" src={seta_virar} alt='seta-virar'/>
         </div>
-
+        <div className="answers">
+            <p className='resposta-question'>O anel</p>
+            <div className="buttons">
+            <button className="no">
+                Não lembrei
+            </button>
+            <button className="almost">
+                Quase não lembrei
+            </button>
+            <button className="yes">
+                Zap!
+            </button>
+          </div>
+        </div>
     </div>
 
 
@@ -69,11 +110,26 @@ export default function App() {
                 <img className="seta-play" src={seta_play} alt='seta-play'/>
             </div>  
         </div>
-        <div className="back-face quatro">
+        <div className="back-face none quatro">
             <p className='pergunta-question'>Qual era a posição de Tiago Potter no time de quadribol da Grifinória?</p>
-            <img className="seta-virar" src={seta_play} alt='seta-virar'/>
+            <img className="seta-virar" src={seta_virar} alt='seta-virar'/>
+        </div>
+        <div className="answers">
+            <p className='resposta-question'>Ele era artilheiro! Já seu filho, apanhador.</p>
+            <div className="buttons">
+            <button className="no">
+                Não lembrei
+            </button>
+            <button className="almost">
+                Quase não lembrei
+            </button>
+            <button className="yes">
+                Zap!
+            </button>
+          </div>
         </div>
     </div>
+
 </div>
 </div>
 
