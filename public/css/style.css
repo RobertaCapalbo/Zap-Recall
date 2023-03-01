@@ -9,6 +9,10 @@ position:relative;
 overflow-y: scroll;
 }
 
+::-webkit-scrollbar{
+    display:none;
+}
+
 .topo{
 display:flex;
 align-items: center;
@@ -85,6 +89,7 @@ text-align:center;
 display:flex;
 align-items: center;
 justify-content: center;
+position:fixed;
 }
 
 .concluidos{
