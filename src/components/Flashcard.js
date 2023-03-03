@@ -66,11 +66,11 @@ export default function Flashcard({cards}) {
             </FrontfaceUm>
         </PerguntaUm>
         <BackfaceUm questionOne={questionOne} answerOne={answerOne} noOne={noOne} almostOne={almostOne} yesOne={yesOne}>
-            <ZapQuestionUm questionOne={questionOne} answerOne={answerOne} noOne={noOne} almostOne={almostOne} yesOne={yesOne}>Quando é o aniversário de Harry Potter?</ZapQuestionUm>
+            <ZapQuestionUm questionOne={questionOne} answerOne={answerOne} noOne={noOne} almostOne={almostOne} yesOne={yesOne}>{cards[0].question}</ZapQuestionUm>
             <SetaVirarUm questionOne={questionOne} answerOne={answerOne} noOne={noOne} almostOne={almostOne} yesOne={yesOne} onClick={firstAnswerShow} src={seta_virar} alt='seta-virar'/>
         </BackfaceUm>
         <AnswersOne answerOne={answerOne} noOne={noOne} almostOne={almostOne} yesOne={yesOne}>
-            <ZapAnswerOne answerOne={answerOne} noOne={noOne} almostOne={almostOne} yesOne={yesOne}>31 de julho</ZapAnswerOne>
+            <ZapAnswerOne answerOne={answerOne} noOne={noOne} almostOne={almostOne} yesOne={yesOne}>{cards[0].answer}</ZapAnswerOne>
             <ButtonsOne answerOne={answerOne} noOne={noOne} almostOne={almostOne} yesOne={yesOne}>
             <NoOne answerOne={answerOne} noOne={noOne} almostOne={almostOne} yesOne={yesOne} onClick={didNotKnow}>
                 Não lembrei
