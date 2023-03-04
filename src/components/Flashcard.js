@@ -1,4 +1,4 @@
-import logo from '../assets/logo.png';
+
 import seta_play from '../assets/seta_play.png';
 import icone_erro from '../assets/icone_erro.png';
 import icone_quase from '../assets/icone_quase.png';
@@ -8,54 +8,9 @@ import styled from "styled-components";
 import React, { useState } from 'react';
 
 
-export default function Flashcard({cards}) {
-
-    const [number, setNumber] = useState(0)
-    const [questionOne, setQuestionOne] = useState(false);
-    const [answerOne, setAnswerOne] = useState(false);
-    const [noOne, setnoOne] = useState(false);
-    const [almostOne, setAlmostOne] = useState(false);
-    const [yesOne, setYesOne] = useState(false);
-
-    function firstQuestionShow(){
-        setQuestionOne(true)
-    }
-
-    function firstAnswerShow(){
-        setQuestionOne(false)
-        setAnswerOne(true)
-    }
-
-    function didNotKnow(){
-        setnoOne(true)
-        setAnswerOne(false)
-        setNumber(number + 1)
-    }
-
-    function almostKnew(){
-        setAlmostOne(true)
-        setAnswerOne(false)
-        setNumber(number + 1)
-    }
-
-    function IKnow(){
-        setYesOne(true)
-        setAnswerOne(false)
-        setNumber(number + 1)
-    }
-
+export default function Flashcard({cards, questionOne, answerOne, noOne, almostOne, yesOne, firstQuestionShow, firstAnswerShow, didNotKnow, almostKnew, IKnow}) {
     return(
-<div ClassName="tela">
-<Container>
-
-        <Topo>
-            <Logo src={logo} alt='logo'/>
-            <Nome>ZapRecall</Nome>
-        </Topo>
-
-<div className='perguntas'>
-
-     <div className="pergunta-um">
+<div className="pergunta-um">
         <PerguntaUm questionOne={questionOne} answerOne={answerOne} noOne={noOne} almostOne={almostOne} yesOne={yesOne}>
             <FrontfaceUm questionOne={questionOne} noOne={noOne} almostOne={almostOne} yesOne={yesOne}>
                 <QuestionOne questionOne={questionOne} noOne={noOne} almostOne={almostOne} yesOne={yesOne}>Pergunta 1</QuestionOne>
@@ -84,58 +39,8 @@ export default function Flashcard({cards}) {
           </ButtonsOne>
         </AnswersOne>
     </div>
-    </div>
-</Container>
-
-    <Footer>
-        <Concluidos>{number}/4 CONCLUÍDOS</Concluidos>
-    </Footer>
- </div>
  )
  }
-
-
-const Container = styled.div`
-width:100vw;
-height:682px;
-background-color:#FB6B6B;
-display:flex;
-flex-direction: column;
-align-items: center;
-position:relative;
-overflow-y: scroll;
-&&::-webkit-scrollbar{
-    display:none;
-}
-`;
-
-const Topo = styled.div`
-display:flex;
-align-items: center;
-gap:20px;
-margin-top:48px;
-margin-bottom:59px;
-`;
-
-const Nome = styled.div`
-width: 203.17px;
-height: 44px;
-font-family: 'Righteous';
-font-style: normal;
-font-weight: 400;
-font-size: 36px;
-line-height: 45px;
-display: flex;
-align-items: center;
-text-align: center;
-letter-spacing: -0.012em;
-color: #FFFFFF;
-`;
-
-const Logo = styled.img`
-width: 52px;
-height: 60px;
-`;
 
 const PerguntaUm = styled.div`
 width: 300px;
@@ -176,30 +81,6 @@ const SetaPlayOne = styled.img`
 width: 20px;
 height: 23px;
 display: ${(props) => (props.questionOne || props.yesOne || props.noOne || props.almostOne ? 'none' : '')}
-`;
-
-const Footer = styled.div`
-width: 100%;
-height: 70px;
-background: #FFFFFF;
-box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.05);
-bottom:0;
-left:0;
-position:absolute;
-text-align:center;
-display:flex;
-align-items: center;
-justify-content: center;
-position:fixed;
-`;
-
-const Concluidos = styled.p`
-font-family: 'Recursive';
-font-style: normal;
-font-weight: 400;
-font-size: 18px;
-line-height: 22px;
-color: #333333;
 `;
 
 const BackfaceUm = styled.div`
