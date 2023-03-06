@@ -44,30 +44,30 @@ export default function Flashcard({index, cardData, number, setNumber}) {
     }
 
     return(
-<div className="pergunta-um">
+<div className="pergunta-um" data-test="flashcard">
         <PerguntaUm questionOne={questionOne} answerOne={answerOne} noOne={noOne} almostOne={almostOne} yesOne={yesOne}>
             <FrontfaceUm questionOne={questionOne} noOne={noOne} almostOne={almostOne} yesOne={yesOne}>
-                <QuestionOne questionOne={questionOne} noOne={noOne} almostOne={almostOne} yesOne={yesOne}>Pergunta {index + 1}</QuestionOne>
-                <SetaPlayOne questionOne={questionOne} noOne={noOne} almostOne={almostOne} yesOne={yesOne} onClick={firstQuestionShow} src={seta_play} alt='seta-play'/>
-                <YesIcon noOne={noOne} almostOne={almostOne} yesOne={yesOne} src={icone_certo} alt='icone_certo'/>
-                <AlmostIcon noOne={noOne} almostOne={almostOne} yesOne={yesOne} src={icone_quase} alt='icone_quase'/>
-                <WrongIcon noOne={noOne} almostOne={almostOne} yesOne={yesOne} src={icone_erro} alt='icone_erro'/>
+                <QuestionOne data-test="flashcard-text" questionOne={questionOne} noOne={noOne} almostOne={almostOne} yesOne={yesOne}>Pergunta {index + 1}</QuestionOne>
+                <SetaPlayOne questionOne={questionOne} noOne={noOne} almostOne={almostOne} yesOne={yesOne} data-test="play-btn" onClick={firstQuestionShow} src={seta_play} alt='seta-play'/>
+                <YesIcon noOne={noOne} almostOne={almostOne} yesOne={yesOne} src={icone_certo} data-test="zap-icon" alt='icone_certo'/>
+                <AlmostIcon noOne={noOne} almostOne={almostOne} yesOne={yesOne} src={icone_quase} data-test="partial-icon" alt='icone_quase'/>
+                <WrongIcon noOne={noOne} almostOne={almostOne} yesOne={yesOne} src={icone_erro} data-test="no-icon" alt='icone_erro'/>
             </FrontfaceUm>
         </PerguntaUm>
         <BackfaceUm questionOne={questionOne} answerOne={answerOne} noOne={noOne} almostOne={almostOne} yesOne={yesOne}>
-            <ZapQuestionUm questionOne={questionOne} answerOne={answerOne} noOne={noOne} almostOne={almostOne} yesOne={yesOne}>{cardData.question}</ZapQuestionUm>
-            <SetaVirarUm questionOne={questionOne} answerOne={answerOne} noOne={noOne} almostOne={almostOne} yesOne={yesOne} onClick={firstAnswerShow} src={seta_virar} alt='seta-virar'/>
+            <ZapQuestionUm data-test="flashcard-text" questionOne={questionOne} answerOne={answerOne} noOne={noOne} almostOne={almostOne} yesOne={yesOne}>{cardData.question}</ZapQuestionUm>
+            <SetaVirarUm questionOne={questionOne} answerOne={answerOne} noOne={noOne} almostOne={almostOne} yesOne={yesOne} onClick={firstAnswerShow} data-test="turn-btn" src={seta_virar} alt='seta-virar'/>
         </BackfaceUm>
         <AnswersOne answerOne={answerOne} noOne={noOne} almostOne={almostOne} yesOne={yesOne}>
-            <ZapAnswerOne answerOne={answerOne} noOne={noOne} almostOne={almostOne} yesOne={yesOne}>{cardData.answer}</ZapAnswerOne>
+            <ZapAnswerOne data-test="flashcard-text" answerOne={answerOne} noOne={noOne} almostOne={almostOne} yesOne={yesOne}>{cardData.answer}</ZapAnswerOne>
             <ButtonsOne answerOne={answerOne} noOne={noOne} almostOne={almostOne} yesOne={yesOne}>
-            <NoOne answerOne={answerOne} noOne={noOne} almostOne={almostOne} yesOne={yesOne} onClick={didNotKnow}>
+            <NoOne answerOne={answerOne} noOne={noOne} almostOne={almostOne} yesOne={yesOne} data-test="no-btn" onClick={didNotKnow}>
                 Não lembrei
             </NoOne>
-            <AlmostOne onClick={almostKnew} answerOne={answerOne} noOne={noOne} almostOne={almostOne} yesOne={yesOne}>
+            <AlmostOne onClick={almostKnew} data-test="partial-btn" answerOne={answerOne} noOne={noOne} almostOne={almostOne} yesOne={yesOne}>
                 Quase não lembrei
             </AlmostOne>
-            <YesOne answerOne={answerOne} noOne={noOne} almostOne={almostOne} yesOne={yesOne} onClick={IKnow}>
+            <YesOne answerOne={answerOne}  data-test="zap-btn" noOne={noOne} almostOne={almostOne} yesOne={yesOne} onClick={IKnow}>
                 Zap!
             </YesOne>
           </ButtonsOne>
