@@ -45,7 +45,7 @@ export default function App() {
         { question: "Quando é o aniversário de Harry Potter?", answer: "31 de julho"},
         { question: "Qual era a posição de James Potter no quadribol?", answer: "Ele era artilheiro! Já seu filho, Harry Potter, apanhador"},
         { question: "Qual é o sabor de geleia favorito de Dumbledore?", answer: "Específica, né? Framboesa! 10 pontos para Grifinória"},
-        { question: "Qual é o código para a entrada de visitantes no Ministério da Magia?", answer: "62442. Olhe para estes números em um teclado telefônico e verá a palavra MAGIC"},
+        { question: "Qual é o código para a entrada de visitantes no Ministério da Magia?", answer: "62442. Busque estes números em um teclado telefônico e verá a palavra 'MAGIC'"},
         { question: "O que está escrito no espelho de Ojesed de trás para frente?", answer: "I show not your face but your heart's desire"},
         { question: "Quantas escadas há em Hogwarts?", answer: "142!"},
         { question: "Qual o nome completo de Dumbledore?", answer: "Alvo Brian Percival Wulfrico Dumbledore"},
