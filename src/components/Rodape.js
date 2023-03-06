@@ -5,7 +5,7 @@ export default function Rodape({number}){
 
     return(
     <Footer>
-        <Concluidos>{number}/4 CONCLUÍDOS</Concluidos>
+        <Concluidos>{number}/12 CONCLUÍDOS</Concluidos>
     </Footer>
     )
 }

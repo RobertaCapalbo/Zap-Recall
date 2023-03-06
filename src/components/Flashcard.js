@@ -8,12 +8,46 @@ import styled from "styled-components";
 import React, { useState } from 'react';
 
 
-export default function Flashcard({cards, questionOne, answerOne, noOne, almostOne, yesOne, firstQuestionShow, firstAnswerShow, didNotKnow, almostKnew, IKnow}) {
+export default function Flashcard({index, cardData, number, setNumber}) {
+
+    const [questionOne, setQuestionOne] = useState(false);
+    const [answerOne, setAnswerOne] = useState(false);
+    const [noOne, setnoOne] = useState(false);
+    const [almostOne, setAlmostOne] = useState(false);
+    const [yesOne, setYesOne] = useState(false);
+
+    function firstQuestionShow(){
+        setQuestionOne(true)
+    }
+
+    function firstAnswerShow(){
+        setQuestionOne(false)
+        setAnswerOne(true)
+    }
+
+    function didNotKnow(){
+        setnoOne(true)
+        setAnswerOne(false)
+        setNumber(number + 1)
+    }
+
+    function almostKnew(){
+        setAlmostOne(true)
+        setAnswerOne(false)
+        setNumber(number + 1)
+    }
+
+    function IKnow(){
+        setYesOne(true)
+        setAnswerOne(false)
+        setNumber(number + 1)
+    }
+
     return(
 <div className="pergunta-um">
         <PerguntaUm questionOne={questionOne} answerOne={answerOne} noOne={noOne} almostOne={almostOne} yesOne={yesOne}>
             <FrontfaceUm questionOne={questionOne} noOne={noOne} almostOne={almostOne} yesOne={yesOne}>
-                <QuestionOne questionOne={questionOne} noOne={noOne} almostOne={almostOne} yesOne={yesOne}>Pergunta 1</QuestionOne>
+                <QuestionOne questionOne={questionOne} noOne={noOne} almostOne={almostOne} yesOne={yesOne}>Pergunta {index + 1}</QuestionOne>
                 <SetaPlayOne questionOne={questionOne} noOne={noOne} almostOne={almostOne} yesOne={yesOne} onClick={firstQuestionShow} src={seta_play} alt='seta-play'/>
                 <YesIcon noOne={noOne} almostOne={almostOne} yesOne={yesOne} src={icone_certo} alt='icone_certo'/>
                 <AlmostIcon noOne={noOne} almostOne={almostOne} yesOne={yesOne} src={icone_quase} alt='icone_quase'/>
@@ -21,11 +55,11 @@ export default function Flashcard({cards, questionOne, answerOne, noOne, almostO
             </FrontfaceUm>
         </PerguntaUm>
         <BackfaceUm questionOne={questionOne} answerOne={answerOne} noOne={noOne} almostOne={almostOne} yesOne={yesOne}>
-            <ZapQuestionUm questionOne={questionOne} answerOne={answerOne} noOne={noOne} almostOne={almostOne} yesOne={yesOne}>{cards[0].question}</ZapQuestionUm>
+            <ZapQuestionUm questionOne={questionOne} answerOne={answerOne} noOne={noOne} almostOne={almostOne} yesOne={yesOne}>{cardData.question}</ZapQuestionUm>
             <SetaVirarUm questionOne={questionOne} answerOne={answerOne} noOne={noOne} almostOne={almostOne} yesOne={yesOne} onClick={firstAnswerShow} src={seta_virar} alt='seta-virar'/>
         </BackfaceUm>
         <AnswersOne answerOne={answerOne} noOne={noOne} almostOne={almostOne} yesOne={yesOne}>
-            <ZapAnswerOne answerOne={answerOne} noOne={noOne} almostOne={almostOne} yesOne={yesOne}>{cards[0].answer}</ZapAnswerOne>
+            <ZapAnswerOne answerOne={answerOne} noOne={noOne} almostOne={almostOne} yesOne={yesOne}>{cardData.answer}</ZapAnswerOne>
             <ButtonsOne answerOne={answerOne} noOne={noOne} almostOne={almostOne} yesOne={yesOne}>
             <NoOne answerOne={answerOne} noOne={noOne} almostOne={almostOne} yesOne={yesOne} onClick={didNotKnow}>
                 Não lembrei
@@ -51,7 +85,6 @@ border-radius: 5px;
 display:flex;
 align-items: center;
 justify-content: center;
-gap:163px;
 margin-bottom:25px;
 display: ${(props) => (props.questionOne ? 'none' : props.answerOne ? 'none' : '')}
 `;
@@ -60,12 +93,12 @@ const FrontfaceUm = styled.div`
 display:flex;
 align-items: center;
 justify-content: center;
-gap:163px;
+gap:148px;
 display: ${(props) => (props.questionOne ? 'none' : '')}
 `;
 
 const QuestionOne = styled.p`
-width: 87px;
+width: 100px;
 height: 19px;
 font-family: 'Recursive';
 font-style: normal;
