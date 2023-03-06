@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 export default function Rodape({number}){
 
     return(
-    <Footer>
+    <Footer data-test="footer">
         <Concluidos>{number}/12 CONCLUÍDOS</Concluidos>
     </Footer>
     )
